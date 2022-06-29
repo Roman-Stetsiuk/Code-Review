@@ -1,0 +1,187 @@
+.planet {
+    margin: auto;
+    max-width: 1440px;
+    width: 100%;
+    height: 1810px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 156px;
+
+    &_text-wrapper {
+        position: absolute;
+        top: 180.5px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    &_text {
+        font-family: Soehne-extrafett;
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #262626;
+        z-index: 1;
+        text-align: center;
+    }
+
+    &_description {
+        font-family: Soehne-leicht;
+        font-size: 16px;
+        line-height: 122%;
+        letter-spacing: 0.1em;
+        color: #303030;
+        text-align: center;
+        z-index: 1;
+        margin-bottom: 32px;
+        // animation: showDescription 4s forwards;
+        // overflow: hidden;
+    }
+    &_circle {
+        position: absolute;
+        top: 228px;
+        z-index: 1;
+        cursor: grab;
+    }
+    &_ellipses {
+        width: 1700px;
+        height: 1790px;
+        position: absolute;
+        top: 65px;
+        z-index: -1;
+        pointer-events: none;
+        animation: spin 50s linear 0s infinite;
+    }
+    &_lineOn {
+        position: absolute;
+        top: 1145px;
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    &_arrowButton {
+        display: flex;
+        margin: 0 auto 35px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 14px;
+        height: 55px;
+        width: 241px;
+        background-color: #262626;
+        transition: background-color 0.6s ease-in-out;
+        border-radius: 99px;
+        font-family: Soehne-halbfett;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 19px;
+        cursor: pointer;
+        z-index: 2;
+
+        a {
+            color: #ffffff !important;
+            &:hover {
+                color: #ffffff !important;
+            }
+        }
+        img {
+            margin: 0;
+            position: relative;
+            height: 17.19px;
+            width: 17.19px;
+            margin-left: 17px;
+            transition: transform 0.6s ease-in-out;
+            transform: rotate(0deg);
+        }
+        &:hover {
+            background-color: #6461fc !important;
+            transition: background-color 0.6s ease-in-out;
+            color: #ffffff;
+            img {
+                transition: transform 0.6s ease-in-out;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &_trustpilot {
+        width: 250.67px;
+        height: 1.805vw;
+        position: absolute;
+        top: 370px;
+        margin: auto;
+        z-index: 2;
+    }
+    &_lottie {
+        position: relative;
+        top: -403px;
+        left: -0.3;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+
+@keyframes showText {
+    0%,
+    99% {
+        height: 0px;
+    }
+    100% {
+        height: 61;
+    }
+}
+@keyframes showDescription {
+    0%,
+    99% {
+        height: 0px;
+    }
+    100% {
+        height: 20px;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .planet {
+        height: 700;
+        &_text-wrapper {
+            top: 86px;
+        }
+        &_circle {
+            pointer-events: none;
+            top: 364px;
+        }
+        &_text {
+            max-width: 316px;
+            margin: 0 auto 30px;
+            font-size: 32px;
+            line-height: 38px;
+        }
+
+        &_description {
+            max-width: 316px;
+            margin: 0 auto 30px;
+        }
+
+        &_arrowButton {
+            margin: 0 auto 30;
+        }
+        &_ellipses {
+            max-width: 500;
+            max-height: 500;
+            top: 318px;
+        }
+    }
+}
